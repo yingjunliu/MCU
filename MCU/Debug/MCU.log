@@ -1,0 +1,20 @@
+﻿生成启动时间为 2014/12/7 17:04:24。
+     1>项目“C:\Users\handsome\Desktop\MCU\MCU\MCU.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\VisualStudio2012\VC\bin\CL.exe /c /I"D:\systemc-2.3.1\src" /ZI /nologo /W1 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Za /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt /vmg /D_CRT_SECURE_NO_DEPRECATE input.cpp
+         input.cpp
+     1>d:\systemc-2.3.1\src\sysc\kernel\sc_macros.h(40): warning C4180: 应用到函数类型的限定符没有意义；已将其忽略
+     1>d:\systemc-2.3.1\src\sysc\kernel\sc_macros.h(48): warning C4180: 应用到函数类型的限定符没有意义；已将其忽略
+     1>d:\systemc-2.3.1\src\sysc\kernel\sc_macros.h(68): warning C4180: 应用到函数类型的限定符没有意义；已将其忽略
+     1>d:\systemc-2.3.1\src\sysc\datatypes\bit\sc_bit_proxies.h(90): warning C4180: 应用到函数类型的限定符没有意义；已将其忽略
+                 d:\systemc-2.3.1\src\sysc\datatypes\bit\sc_bit_proxies.h(144): 参见对正在编译的类 模板 实例化“sc_dt::sc_bitref_r<X>”的引用
+     1>d:\systemc-2.3.1\src\sysc\datatypes\bit\sc_bit_proxies.h(96): warning C4180: 应用到函数类型的限定符没有意义；已将其忽略
+     1>d:\systemc-2.3.1\src\sysc\packages\boost\utility\enable_if.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+       Link:
+         D:\VisualStudio2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\handsome\Desktop\MCU\Debug\MCU.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\systemc-2.3.1\msvc80\SystemC\Debug" SystemC.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\handsome\Desktop\MCU\Debug\MCU.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\handsome\Desktop\MCU\Debug\MCU.lib" /MACHINE:X86 Debug\input.obj
+         MCU.vcxproj -> C:\Users\handsome\Desktop\MCU\Debug\MCU.exe
+     1>已完成生成项目“C:\Users\handsome\Desktop\MCU\MCU\MCU.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.45
