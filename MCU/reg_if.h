@@ -1,17 +1,17 @@
 #include <systemc.h>
 
-enum transfer_status{TRANSFER_OK = 0, TRANSFER_ERROR};
+enum transfer_status{TRANSFER_ERROR = 0, TRANSFER_OK};
 enum bit{BIT_CLEAN = 0, BIT_ONE};
 
 class reg_read_if: public sc_interface
 {
 public:
-	virtual transfer_status read(unsigned int address, char& data) = 0;
+	virtual transfer_status read(unsigned int address, unsigned char& data) = 0;
 };
 class reg_write_if: public sc_interface
 {
 public:
-	virtual transfer_status write(unsigned int address, char& data) = 0;
+	virtual transfer_status write(unsigned int address, unsigned char& data) = 0;
 };
 
 class reg_set_if: public sc_interface

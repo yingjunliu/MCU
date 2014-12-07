@@ -20,7 +20,7 @@ public:
 		}
 	}
 
-	transfer_status read(unsigned address, char& data)
+	transfer_status read(unsigned address, unsigned char& data)
 	{
 		if(address < reg_start_address || address > reg_end_address)
 		{
@@ -31,7 +31,7 @@ public:
 		return TRANSFER_OK;
 	}
 
-	transfer_status write(unsigned address, char& data)
+	transfer_status write(unsigned address, unsigned char& data)
 	{
 		if(address < reg_start_address || address > reg_end_address)
 		{
@@ -77,4 +77,28 @@ public:
 private:
 	char* registers;
 	unsigned int reg_start_address,reg_end_address;
+};
+
+class reg_work_choose:public reg_read_if, reg_write_if,sc_module
+{
+public:
+	reg_work_choose(sc_module_name name_):sc_module(name_)
+	{
+		work_register = 0;
+	}
+
+	transfer_status read(unsigned int address, unsigned char& data)
+	{
+		data = work_register;
+		return TRANSFER_OK;
+	}
+
+	transfer_status write(unsigned int address, unsigned char& data)
+	{
+		work_register = data;
+		return TRANSFER_OK;
+	}
+
+private:
+	char work_register;
 };
