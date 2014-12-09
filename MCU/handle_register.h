@@ -7,14 +7,14 @@ SC_MODULE(Master)
 	reg_work_choose *work_register;
 
 	void main_action();
-	unsigned int BitToNumber(char *, unsigned int);
-	char * numberToBit(unsigned char);
-	void BCF(unsigned int, unsigned int);
-	void BSF(unsigned int, unsigned int);
-	void MOVELW(char*);
-	void ADDLW(char*);
-	void MOVEWF(unsigned int);
-	void ANDLW(unsigned char);
+	unsigned int BitToNumber(char* bits, unsigned int totalNumber);
+	char * numberToBit(unsigned char number);
+	void BCF(unsigned int address, unsigned int position);
+	void BSF(unsigned int address, unsigned int position);
+	void MOVELW(char* data);
+	void ADDLW(char* data);
+	void MOVEWF(unsigned int address);
+	void ANDLW(unsigned char data);
 
 	unsigned char data;
 	char inputs[15];
@@ -36,7 +36,7 @@ void Master::BCF(unsigned int address, unsigned int position)
 		{
 			char work_result[9];
 			strcpy(work_result, numberToBit(data));
-			cout<<"置f第"<<position<<"位为0，f结果为"<<work_result<<endl;
+			cout<<"置f("<<address<<")第"<<position<<"位为0，f结果为"<<work_result<<endl;
 		}
 	}
 }
@@ -49,7 +49,7 @@ void Master::BSF(unsigned int address, unsigned int position)
 		{
 			char work_result[9];
 			strcpy(work_result, numberToBit(data));
-			cout<<"置f第"<<position<<"位为1，f结果为"<<work_result<<endl;
+			cout<<"置f("<<address<<")第"<<position<<"位为1，f结果为"<<work_result<<endl;
 		}
 	}
 }
@@ -84,7 +84,9 @@ void Master::MOVEWF(unsigned int address)
 	{
 		if(Register->write(address,work_number))
 		{
-			cout<<"W的值送到f中"<<endl;
+			char work_result[9];
+			strcpy(work_result, numberToBit(work_number));
+			cout<<"W的值送到f("<<address<<")中，f值为"<<work_result<<endl;
 		}
 	}
 }
