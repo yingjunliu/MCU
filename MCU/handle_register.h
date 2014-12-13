@@ -96,10 +96,10 @@ void Master::ANDLW(unsigned char data)
 	unsigned char work_number;
 	if(work_register->read(0,work_number))
 	{
-		work_number += data;
+		work_number = work_number & data;
 		work_register->write(0,work_number);
 		char work_result[9];
 		strcpy(work_result, numberToBit(work_number));
-		cout<<"立即数加W，W的结果为"<<work_result<<endl;
+		cout<<"立即数和W值与运算，W的结果为"<<work_result<<endl;
 	}
 }
